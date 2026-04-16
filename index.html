@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Vale | Modern Essentials</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Maison Vale home">
+        <span class="brand-mark">MV</span>
+        <span>Maison Vale</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#shop">Shop</a>
+        <a href="#journal">Journal</a>
+        <a href="#studio">Studio</a>
+      </nav>
+
+      <div class="top-actions">
+        <button class="icon-button search-toggle" type="button" aria-label="Search products" title="Search">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" />
+          </svg>
+        </button>
+        <button class="cart-button" type="button" aria-label="Open cart">
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M7 8h14l-1.6 8.2a2 2 0 0 1-2 1.6H9.3a2 2 0 0 1-2-1.6L5.8 4.9H3" />
+            <path d="M9 21h.1M18 21h.1" />
+          </svg>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="shop-shell" id="shop">
+        <aside class="shop-panel" aria-label="Shopping controls">
+          <p class="eyebrow">Spring edit</p>
+          <h1>Maison Vale</h1>
+          <p class="intro">
+            Elevated everyday pieces selected for clean silhouettes, tactile materials, and calm luxury.
+          </p>
+
+          <label class="search-box">
+            <span class="sr-only">Search products</span>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="m21 21-4.3-4.3m2.3-5.2a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" />
+            </svg>
+            <input id="productSearch" type="search" placeholder="Search linen, ceramic, leather..." />
+          </label>
+
+          <div class="filter-group" aria-label="Product category">
+            <button class="filter is-active" type="button" data-category="all">All</button>
+            <button class="filter" type="button" data-category="home">Home</button>
+            <button class="filter" type="button" data-category="wear">Wear</button>
+            <button class="filter" type="button" data-category="travel">Travel</button>
+          </div>
+
+          <div class="promise-list" aria-label="Store promises">
+            <div>
+              <strong>Free delivery</strong>
+              <span>On orders above $120</span>
+            </div>
+            <div>
+              <strong>Considered materials</strong>
+              <span>Small-batch and responsibly sourced</span>
+            </div>
+          </div>
+        </aside>
+
+        <div class="product-area">
+          <div class="hero-product">
+            <img
+              src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1600&q=85"
+              alt="Minimal living space with cream seating and sculptural decor"
+            />
+            <div class="hero-copy">
+              <p>Featured collection</p>
+              <h2>Soft structure for slow mornings</h2>
+              <button class="text-button" type="button" data-category-jump="home">
+                Explore home
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Curated objects</p>
+              <h2>Shop the edit</h2>
+            </div>
+            <select id="sortProducts" aria-label="Sort products">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price low to high</option>
+              <option value="price-high">Price high to low</option>
+            </select>
+          </div>
+
+          <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="editorial" id="journal">
+        <div>
+          <p class="eyebrow">Journal</p>
+          <h2>Made for rooms and routines that breathe.</h2>
+        </div>
+        <p>
+          Maison Vale pairs restrained forms with warm natural texture, creating a collection that feels composed without
+          becoming cold.
+        </p>
+      </section>
+
+      <section class="studio-band" id="studio">
+        <img
+          src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=85"
+          alt="Minimal studio with warm wood and neutral furniture"
+        />
+        <div>
+          <p class="eyebrow">Studio service</p>
+          <h2>Private sourcing for calmer spaces.</h2>
+          <button class="outline-button" type="button">Book a consult</button>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+      <div class="cart-header">
+        <div>
+          <p class="eyebrow">Your bag</p>
+          <h2>Cart</h2>
+        </div>
+        <button class="icon-button close-cart" type="button" aria-label="Close cart" title="Close cart">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" /></svg>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Subtotal</span>
+          <strong id="cartTotal">$0</strong>
+        </div>
+        <button class="checkout-button" type="button">Checkout</button>
+      </div>
+    </aside>
+    <div class="scrim" hidden></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
